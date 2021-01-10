@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testsuite failures="0" name="cucumber.runtime.formatter.JUnitFormatter" skipped="0" tests="1" time="68.591531">
+    <testcase classname="Onliner feature" name="user login into onliner and get to cart items" time="68.591531">
+        <system-out><![CDATA[Given user navigates to "https://www.onliner.by/"...........................passed
+When user is on home page...................................................passed
+When user click on "Sign_In" button.........................................passed
+And user enter "dzmitry.ramantsevich@expert-soft.by" email on Login page....passed
+And user enter "5716294qD" password on Login page...........................passed
+When user click on "Login" button...........................................passed
+When user is on home page...................................................passed
+And user click on "1" News on Home page.....................................passed
+Then user see Heading on "News" page........................................passed
+And user click on "2" Reaction on News page.................................passed
+Then user see selected Reaction on News page................................passed
+And user click on "3" Popular News on News page.............................passed
+And user click on "Каталог" Navigation Menu.................................passed
+Then user see Heading on "Catalog" page.....................................passed
+And user click on "1" Catalog Navigation Classifier on Catalog page.........passed
+And user mouseover on "Мобильные телефоны и аксессуары" Catalog Navigation List Item on Catalog page.passed
+Then user see Catalog Navigation active List Item...........................passed
+And user click on "Мобильные телефоны" Dropdown Navigation List Item on Catalog page.passed
+Then user see Heading on "Mobile Phones Catalog" page.......................passed
+And user click on "Смартфон HONOR 30 BMH-AN10 8GB/128GB (изумрудно-зеленый)" Mobile Phone on Mobile Phones Catalog.passed
+Then user see Heading on "Product" page.....................................passed
+When user click on "Предложений" button.....................................passed
+And user click on "1" Offers list item on Product page......................passed
+Then user see Buy Button is green on Product Page...........................passed
+When user enter "Xiaomi Redmi 9A 2GB/32GB международная версия (серый)" on Search Input.passed
+And user click on "Xiaomi Redmi 9A 2GB/32GB международная версия (серый)" Item on Search window.passed
+Then user see Heading on "Product" page.....................................passed
+When user click on "Предложений" button.....................................passed
+And user click on "1" Offers list item on Product page......................passed
+Then user see Buy Button is green on Product Page...........................passed
+When user click on "В корзине" button.......................................passed
+Then user see Heading on "Cart" page........................................passed
+And user remove all Items on Cart page......................................passed
+Then user see confirm Remove message on Cart page...........................passed
+When user click on Logo on Cart page........................................passed
+When user is on home page...................................................passed
+]]></system-out>
+    </testcase>
+</testsuite>

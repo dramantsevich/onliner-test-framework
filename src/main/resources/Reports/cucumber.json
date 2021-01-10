@@ -1,0 +1,616 @@
+[
+  {
+    "line": 2,
+    "elements": [
+      {
+        "line": 4,
+        "name": "user login into onliner and get to cart items",
+        "description": "",
+        "id": "onliner-feature;user-login-into-onliner-and-get-to-cart-items",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 4075630200,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "user navigates to \"https://www.onliner.by/\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "https://www.onliner.by/",
+                  "offset": 19
+                }
+              ],
+              "location": "StepDefinition.userIsOnHomePage(String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 231114300,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "user is on home page",
+            "match": {
+              "location": "StepDefinition.userIsOnHomePage()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 325738100,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "user click on \"Sign_In\" button",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Sign_In",
+                  "offset": 15
+                }
+              ],
+              "location": "StepDefinition.userClickOnButton(String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 404580500,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "user enter \"dzmitry.ramantsevich@expert-soft.by\" email on Login page",
+            "match": {
+              "arguments": [
+                {
+                  "val": "dzmitry.ramantsevich@expert-soft.by",
+                  "offset": 12
+                }
+              ],
+              "location": "StepDefinition.userEnterEmailOnLoginPage(String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 215739200,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "user enter \"5716294qD\" password on Login page",
+            "match": {
+              "arguments": [
+                {
+                  "val": "5716294qD",
+                  "offset": 12
+                }
+              ],
+              "location": "StepDefinition.userEnterPasswordOnLoginPage(String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 170668000,
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "user click on \"Login\" button",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Login",
+                  "offset": 15
+                }
+              ],
+              "location": "StepDefinition.userClickOnButton(String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 3026098900,
+              "status": "passed"
+            },
+            "line": 11,
+            "name": "user is on home page",
+            "match": {
+              "location": "StepDefinition.userIsOnHomePage()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 5447193800,
+              "status": "passed"
+            },
+            "line": 12,
+            "name": "user click on \"1\" News on Home page",
+            "match": {
+              "arguments": [
+                {
+                  "val": "1",
+                  "offset": 15
+                }
+              ],
+              "location": "StepDefinition.userClickOnNewsOnHomePage(String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 79076300,
+              "status": "passed"
+            },
+            "line": 13,
+            "name": "user see Heading on \"News\" page",
+            "match": {
+              "arguments": [
+                {
+                  "val": "News",
+                  "offset": 21
+                }
+              ],
+              "location": "StepDefinition.userSeeHeadingOnNewsPage(String)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 180036500,
+              "status": "passed"
+            },
+            "line": 14,
+            "name": "user click on \"2\" Reaction on News page",
+            "match": {
+              "arguments": [
+                {
+                  "val": "2",
+                  "offset": 15
+                }
+              ],
+              "location": "StepDefinition.userClickOnReactionOnNewsPage(String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 124554500,
+              "status": "passed"
+            },
+            "line": 15,
+            "name": "user see selected Reaction on News page",
+            "match": {
+              "location": "StepDefinition.userSeeSelectedReactionOnNewsPage()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 230415400,
+              "status": "passed"
+            },
+            "line": 16,
+            "name": "user click on \"3\" Popular News on News page",
+            "match": {
+              "arguments": [
+                {
+                  "val": "3",
+                  "offset": 15
+                }
+              ],
+              "location": "StepDefinition.userClickOnPopularNewsOnNewsPage(String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 198996000,
+              "status": "passed"
+            },
+            "line": 17,
+            "name": "user click on \"Каталог\" Navigation Menu",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Каталог",
+                  "offset": 15
+                }
+              ],
+              "location": "StepDefinition.userClickOnNavigationmenu(String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 1895906400,
+              "status": "passed"
+            },
+            "line": 18,
+            "name": "user see Heading on \"Catalog\" page",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Catalog",
+                  "offset": 21
+                }
+              ],
+              "location": "StepDefinition.userSeeHeadingOnNewsPage(String)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 608871600,
+              "status": "passed"
+            },
+            "line": 19,
+            "name": "user click on \"1\" Catalog Navigation Classifier on Catalog page",
+            "match": {
+              "arguments": [
+                {
+                  "val": "1",
+                  "offset": 15
+                }
+              ],
+              "location": "StepDefinition.userClickOnCatalogNavigationClassifierOnCatalogPage(String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 331221000,
+              "status": "passed"
+            },
+            "line": 20,
+            "name": "user mouseover on \"Мобильные телефоны и аксессуары\" Catalog Navigation List Item on Catalog page",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Мобильные телефоны и аксессуары",
+                  "offset": 19
+                }
+              ],
+              "location": "StepDefinition.userClickOnCatalogNavigationListItemOnCatalogPage(String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 66707800,
+              "status": "passed"
+            },
+            "line": 21,
+            "name": "user see Catalog Navigation active List Item",
+            "match": {
+              "location": "StepDefinition.userSeeCatalogNavigationActiveListItem()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 2175639800,
+              "status": "passed"
+            },
+            "line": 22,
+            "name": "user click on \"Мобильные телефоны\" Dropdown Navigation List Item on Catalog page",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Мобильные телефоны",
+                  "offset": 15
+                }
+              ],
+              "location": "StepDefinition.userClickOnDropdownNavigationListItemOnCatalogPage(String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 2071112200,
+              "status": "passed"
+            },
+            "line": 23,
+            "name": "user see Heading on \"Mobile Phones Catalog\" page",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Mobile Phones Catalog",
+                  "offset": 21
+                }
+              ],
+              "location": "StepDefinition.userSeeHeadingOnNewsPage(String)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 874033700,
+              "status": "passed"
+            },
+            "line": 24,
+            "name": "user click on \"Смартфон HONOR 30 BMH-AN10 8GB/128GB (изумрудно-зеленый)\" Mobile Phone on Mobile Phones Catalog",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Смартфон HONOR 30 BMH-AN10 8GB/128GB (изумрудно-зеленый)",
+                  "offset": 15
+                }
+              ],
+              "location": "StepDefinition.userClickOnMobilePhoneOnMobilePhonesCatalog(String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 1945634900,
+              "status": "passed"
+            },
+            "line": 25,
+            "name": "user see Heading on \"Product\" page",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Product",
+                  "offset": 21
+                }
+              ],
+              "location": "StepDefinition.userSeeHeadingOnNewsPage(String)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 1484681100,
+              "status": "passed"
+            },
+            "line": 26,
+            "name": "user click on \"Предложений\" button",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Предложений",
+                  "offset": 15
+                }
+              ],
+              "location": "StepDefinition.userClickOnButton(String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 2285807700,
+              "status": "passed"
+            },
+            "line": 27,
+            "name": "user click on \"1\" Offers list item on Product page",
+            "match": {
+              "arguments": [
+                {
+                  "val": "1",
+                  "offset": 15
+                }
+              ],
+              "location": "StepDefinition.userClickOnOffersListItemOnProductPage(String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 1139665600,
+              "status": "passed"
+            },
+            "line": 28,
+            "name": "user see Buy Button is green on Product Page",
+            "match": {
+              "location": "StepDefinition.userSeeBuyButtonIsGreenOnProductPage()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 1608195900,
+              "status": "passed"
+            },
+            "line": 29,
+            "name": "user enter \"Xiaomi Redmi 9A 2GB/32GB международная версия (серый)\" on Search Input",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Xiaomi Redmi 9A 2GB/32GB международная версия (серый)",
+                  "offset": 12
+                }
+              ],
+              "location": "StepDefinition.userEnterOnSearchInput(String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 681901200,
+              "status": "passed"
+            },
+            "line": 30,
+            "name": "user click on \"Xiaomi Redmi 9A 2GB/32GB международная версия (серый)\" Item on Search window",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Xiaomi Redmi 9A 2GB/32GB международная версия (серый)",
+                  "offset": 15
+                }
+              ],
+              "location": "StepDefinition.userClickOnItemOnSearchWindow(String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 1753802200,
+              "status": "passed"
+            },
+            "line": 31,
+            "name": "user see Heading on \"Product\" page",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Product",
+                  "offset": 21
+                }
+              ],
+              "location": "StepDefinition.userSeeHeadingOnNewsPage(String)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 2458893800,
+              "status": "passed"
+            },
+            "line": 32,
+            "name": "user click on \"Предложений\" button",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Предложений",
+                  "offset": 15
+                }
+              ],
+              "location": "StepDefinition.userClickOnButton(String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 359813300,
+              "status": "passed"
+            },
+            "line": 33,
+            "name": "user click on \"1\" Offers list item on Product page",
+            "match": {
+              "arguments": [
+                {
+                  "val": "1",
+                  "offset": 15
+                }
+              ],
+              "location": "StepDefinition.userClickOnOffersListItemOnProductPage(String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 1148132400,
+              "status": "passed"
+            },
+            "line": 34,
+            "name": "user see Buy Button is green on Product Page",
+            "match": {
+              "location": "StepDefinition.userSeeBuyButtonIsGreenOnProductPage()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 1137972000,
+              "status": "passed"
+            },
+            "line": 35,
+            "name": "user click on \"В корзине\" button",
+            "match": {
+              "arguments": [
+                {
+                  "val": "В корзине",
+                  "offset": 15
+                }
+              ],
+              "location": "StepDefinition.userClickOnButton(String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 57475900,
+              "status": "passed"
+            },
+            "line": 36,
+            "name": "user see Heading on \"Cart\" page",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Cart",
+                  "offset": 21
+                }
+              ],
+              "location": "StepDefinition.userSeeHeadingOnNewsPage(String)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 27117965100,
+              "status": "passed"
+            },
+            "line": 37,
+            "name": "user remove all Items on Cart page",
+            "match": {
+              "location": "StepDefinition.userRemoveAllItemsOnCartPage()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 322906800,
+              "status": "passed"
+            },
+            "line": 38,
+            "name": "user see confirm Remove message on Cart page",
+            "match": {
+              "location": "StepDefinition.userSeeConfirmRemoveMessageOnCartPage()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 2288781600,
+              "status": "passed"
+            },
+            "line": 39,
+            "name": "user click on Logo on Cart page",
+            "match": {
+              "location": "StepDefinition.userClickOnLogoOnCartPage()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 66567300,
+              "status": "passed"
+            },
+            "line": 40,
+            "name": "user is on home page",
+            "match": {
+              "location": "StepDefinition.userIsOnHomePage()"
+            },
+            "keyword": "When "
+          }
+        ]
+      }
+    ],
+    "name": "Onliner feature",
+    "description": "",
+    "id": "onliner-feature",
+    "keyword": "Feature",
+    "uri": "src/test/java/feature/onliner.feature",
+    "tags": [
+      {
+        "line": 1,
+        "name": "@OnlinerFunctionality"
+      }
+    ]
+  }
+]
