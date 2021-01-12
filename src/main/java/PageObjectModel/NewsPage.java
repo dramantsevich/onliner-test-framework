@@ -12,7 +12,7 @@ public class NewsPage {
     @FindBy(xpath = "//h1")
     private WebElement heading;
 
-    @FindBy(xpath = "//div[@class='st-btn st-selected']")
+    @FindBy(xpath = "//div[contains(@class,'st-btn st-selected')]")
     private WebElement selectedReaction;
 
     public NewsPage(WebDriver ldriver) {
@@ -29,6 +29,11 @@ public class NewsPage {
     }
 
     public WebElement getPopularNewsByNumber(String populaNewsNumber){
-        return driver.findElement(By.xpath("//a[@class='news-popular__item news-popular__item_visible']["+ populaNewsNumber +"]"));
+        return driver.findElement(By.xpath("//a[contains(@class,'news-popular__item news-popular__item_visible')]["+ populaNewsNumber +"]"));
+    }
+
+    public WebElement getPopularNewsNameByNumber(String popularNewsNumber){
+        return driver.findElement(By.xpath("//a[contains(@class,'news-popular__item news-popular__item_visible')]["+ popularNewsNumber +"]" +
+                "//div[@class='news-popular__subtitle']"));
     }
 }

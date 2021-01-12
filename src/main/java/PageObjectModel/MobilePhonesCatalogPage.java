@@ -20,7 +20,7 @@ public class MobilePhonesCatalogPage {
     public WebElement getHeading() { return heading; }
 
     public WebElement getMobilePhoneByName(String phoneName){
-        return driver.findElement(By.xpath("//div[@class='schema-product__part schema-product__part_4']" +
+        return driver.findElement(By.xpath("//div[contains(@class,'schema-product__part schema-product__part_4')]" +
                 "/div/a/span[contains(text(),'"+ phoneName +"')]"));
     }
 }

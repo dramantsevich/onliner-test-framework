@@ -1,5 +1,7 @@
 package stepdefinition;
 
+import Helper.FileReaderManager;
+import Helper.NewsListener;
 import Helper.PageObjectManager;
 import PageObjectModel.*;
 import cucumber.api.java.en.*;
@@ -8,12 +10,13 @@ import org.openqa.selenium.WebElement;
 import testrunner.TestRunner;
 
 import java.lang.reflect.InvocationTargetException;
+import java.util.Locale;
 
 import static baseclass.BaseUtils.*;
 import static org.junit.Assert.*;
 
-public class StepDefinition {
-
+public class OnlinerStepDefinition {
+    private static NewsListener newsListener;
     private static WebDriver driver = TestRunner.driver;
     private static PageObjectManager pageobject = new PageObjectManager(driver);
     private static HomePage homePage = pageobject.getHome();
@@ -45,7 +48,6 @@ public class StepDefinition {
         }
         if(option.equalsIgnoreCase("Предложений")){
             clickusingJavascript(productPage.getOffersButton());
-            Thread.sleep(1000);
         }
         if(option.equalsIgnoreCase("В корзине")){
             clickusingActions(productPage.getGreenBuyButton());
@@ -55,18 +57,21 @@ public class StepDefinition {
         }
     }
 
-    @And("^user enter \"([^\"]*)\" email on Login page$")
-    public void userEnterEmailOnLoginPage(String email) {
+    @And("^user enter email on Login page$")
+    public void userEnterEmailOnLoginPage() throws Throwable {
+        String email = FileReaderManager.getInstance().getConfigReader().getEmailAddress();
         sendkeysUsingActions(loginPage.getEmail(), email);
     }
 
-    @And("^user enter \"([^\"]*)\" password on Login page$")
-    public void userEnterPasswordOnLoginPage(String password){
+    @And("^user enter password on Login page$")
+    public void userEnterPasswordOnLoginPage() throws Throwable {
+        String password = FileReaderManager.getInstance().getConfigReader().getPassword();
         sendkeysUsingActions(loginPage.getPassword(), password);
     }
 
     @And("^user click on \"([^\"]*)\" News on Home page$")
     public void userClickOnNewsOnHomePage(String newsNumber) throws InvocationTargetException {
+        newsListener = new NewsListener(homePage.getNewsCategoryByNumber(newsNumber).getText());
         clickusingActions(homePage.getNewsByNumber(newsNumber));
     }
 
@@ -75,6 +80,10 @@ public class StepDefinition {
         if(pageName.equalsIgnoreCase("News")){
             waitforVisibility(newsPage.getHeading());
             assertTrue(newsPage.getHeading().isDisplayed());
+        }
+        else if(pageName.equalsIgnoreCase("Popular News")){
+            waitforVisibility(newsPage.getHeading());
+            assertTrue(newsPage.getHeading().getText().toLowerCase(Locale.ROOT).contains(newsListener.getNews()));
         }
         else if(pageName.equalsIgnoreCase("Catalog")){
             waitforVisibility(catalogPage.getHeading());
@@ -94,6 +103,12 @@ public class StepDefinition {
         }
     }
 
+    @Then("^user see same Category on News page$")
+    public void userSeeSameCategoryOnNewsPage(){
+        waitforVisibility(homePage.getActiveNewsCategory());
+        assertTrue(homePage.getActiveNewsCategory().getText().toLowerCase(Locale.ROOT).contains(newsListener.getNews()));
+    }
+
     @And("^user click on \"([^\"]*)\" Reaction on News page$")
     public void userClickOnReactionOnNewsPage(String reactionNumber) throws InvocationTargetException{
         clickusingActions(newsPage.getReactionByNumber(reactionNumber));
@@ -106,7 +121,8 @@ public class StepDefinition {
     }
 
     @And("^user click on \"([^\"]*)\" Popular News on News page$")
-    public void userClickOnPopularNewsOnNewsPage(String popularNewsNumber) throws InvocationTargetException{
+    public void userClickOnPopularNewsOnNewsPage(String popularNewsNumber) throws InvocationTargetException {
+        newsListener = new NewsListener(newsPage.getPopularNewsNameByNumber(popularNewsNumber).getText());
         clickusingActions(newsPage.getPopularNewsByNumber(popularNewsNumber));
     }
 
@@ -151,6 +167,7 @@ public class StepDefinition {
     @And("^user click on \"([^\"]*)\" Offers list item on Product page$")
     public void userClickOnOffersListItemOnProductPage(String itemNumber) throws InvocationTargetException {
         waitforVisibility(productPage.getOffersFilter());
+        assertTrue(productPage.getOffersListItemByNumber(itemNumber).isEnabled());
         clickusingActions(productPage.getOffersListItemByNumber(itemNumber));
     }
 
@@ -161,15 +178,26 @@ public class StepDefinition {
     }
 
     @When("^user enter \"([^\"]*)\" on Search Input$")
-    public void userEnterOnSearchInput(String string) throws InterruptedException {
+    public void userEnterOnSearchInput(String string) {
         sendkeysUsingActions(homePage.getSearchInput(), string);
-        Thread.sleep(1000);
+    }
+
+    @Then("^user see \"([^\"]*)\" on Search Window Input$")
+    public void userSeeOnSearchWindowInput(String product){
+        driver.switchTo().frame(homePage.getSearchFrame());
+        waitforVisibility(homePage.getSearchFrameInput());
+        assertTrue(homePage.getSearchFrameInput().getText().contains(product));
     }
 
     @And("^user click on \"([^\"]*)\" Item on Search window$")
     public void userClickOnItemOnSearchWindow(String itemName) throws InvocationTargetException {
-        driver.switchTo().frame(homePage.getSearchFrame());
         clickusingActions(homePage.getSearchResultItemByName(itemName));
+    }
+
+    @Then("^user see \"([^\"]*)\" product contains in Cart page$")
+    public void userSeeThatProductsContainsInCartPage(String product){
+        waitforVisibility(cartPage.getProductName(product));
+        assertTrue(cartPage.getProductName(product).isDisplayed());
     }
 
     @And("^user remove all Items on Cart page$")
@@ -178,7 +206,6 @@ public class StepDefinition {
 
         while(i > 0){
             mouseover(cartPage.getOffersPartAction());
-            Thread.sleep(2000);
             clickusingActions(cartPage.getRemoveButton());
             i--;
         }
@@ -195,5 +222,12 @@ public class StepDefinition {
     @When("^user click on Logo on Cart page$")
     public void userClickOnLogoOnCartPage() throws InvocationTargetException {
         clickusingActions(cartPage.getLogo());
+    }
+
+    @And("^user logout the application$")
+    public void userLoguoutTheApplication() throws InvocationTargetException {
+        clickusingActions(homePage.getProfileArrow());
+        waitforVisibility(homePage.getProfileName());
+        clickusingActions(homePage.getLogoutButton());
     }
 }

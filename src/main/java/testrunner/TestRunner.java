@@ -1,7 +1,9 @@
 package testrunner;
 
+import Helper.FileReaderManager;
 import baseclass.BaseUtils;
 import com.cucumber.listener.ExtentProperties;
+import com.cucumber.listener.Reporter;
 import cucumber.api.CucumberOptions;
 import cucumber.api.junit.Cucumber;
 import org.junit.AfterClass;
@@ -9,6 +11,7 @@ import org.junit.BeforeClass;
 import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
 
+import java.io.File;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -16,7 +19,7 @@ import java.util.Date;
 @RunWith(Cucumber.class)
 @CucumberOptions(
         features = "src/test/java/feature/onliner.feature",
-        glue = { "stepdefinition" },
+        glue = "stepdefinition" ,
         tags= {//"@RequestForQuote"
         },
         monochrome=true,
@@ -34,8 +37,8 @@ public class TestRunner {
 
         @BeforeClass
         public static void setUp() throws Throwable {
-                String browser = "chrome";
-                driver = BaseUtils.browserLaunch(browser);
+                String browser = FileReaderManager.getInstance().getConfigReader().getbrowserName();
+                driver=BaseUtils.browserLaunch(browser);
                 Date dateform = new Date();
                 DateFormat date = new SimpleDateFormat("YYYY_MM_dd HH mm ss ");
                 ExtentProperties extentProperties = ExtentProperties.INSTANCE;
@@ -45,6 +48,7 @@ public class TestRunner {
 
         @AfterClass
         public static void tearDown() throws Throwable {
+                Reporter.loadXMLConfig(new File(FileReaderManager.getInstance().getConfigReader().getextent_report()));
                 driver.close();
                 driver.quit();
         }

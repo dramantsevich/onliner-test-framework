@@ -8,13 +8,13 @@ import org.openqa.selenium.support.PageFactory;
 public class LoginPage {
     public static WebDriver driver;
 
-    @FindBy(xpath = "//input[@placeholder = 'Ник или e-mail']")
+    @FindBy(xpath = "//input[contains(@placeholder,'Ник или e-mail')]")
     private WebElement email;
 
-    @FindBy(xpath = "//input[@placeholder = 'Пароль']")
+    @FindBy(xpath = "//input[contains(@placeholder,'Пароль')]")
     private WebElement password;
 
-    @FindBy(xpath = "//button[@class='auth-button auth-button_primary auth-button_middle auth-form__button auth-form__button_width_full']")
+    @FindBy(xpath = "//button[contains(@class,'auth-button auth-button_primary auth-button_middle auth-form__button auth-form__button_width_full')]")
     private WebElement loginButton;
 
     public LoginPage(WebDriver ldriver) {

@@ -12,13 +12,10 @@ public class CatalogPage {
     @FindBy(xpath = "//h1[@class='catalog-navigation__title']")
     private WebElement heading;
 
-    @FindBy(xpath = "//ul[@class='catalog-navigation-classifier catalog-navigation-classifier_brand']")
+    @FindBy(xpath = "//ul[contains(@class,'catalog-navigation-classifier catalog-navigation-classifier_brand')]")
     private WebElement catalogNavigationClassifier;
 
-    @FindBy(xpath = "//div[@class='catalog-navigation-list catalog-navigation-list_active catalog-navigation-list_opened']")
-    private WebElement navigationActiveList;
-
-    @FindBy(xpath = "//div[@class='catalog-navigation-list__aside-item catalog-navigation-list__aside-item_active']")
+    @FindBy(xpath = "//div[contains(@class,'catalog-navigation-list__aside-item catalog-navigation-list__aside-item_active')]")
     private WebElement catalogNavigationActiveListItem;
 
     public CatalogPage(WebDriver ldriver) {
@@ -34,8 +31,6 @@ public class CatalogPage {
         return driver.findElement(By.xpath("//li[@class='catalog-navigation-classifier__item ']["+ classifierNumber +"]"));
     }
 
-    public WebElement getNavigationActiveList() { return navigationActiveList; }
-
     public WebElement getCatalogNavigationListItemByName(String itemName){
         return driver.findElement(By.xpath("//div[@class='catalog-navigation-list__aside-item']/div[contains(text(), '"+ itemName +"')]"));
     }
@@ -43,7 +38,7 @@ public class CatalogPage {
     public WebElement getCatalogNavigationActiveListItem() { return catalogNavigationActiveListItem; }
 
     public WebElement getDropdownNavigationListItemByName(String itemName){
-        return driver.findElement(By.xpath("//div[@class='catalog-navigation-list__aside-item catalog-navigation-list__aside-item_active']" +
+        return driver.findElement(By.xpath("//div[contains(@class,'catalog-navigation-list__aside-item catalog-navigation-list__aside-item_active')]" +
                 "//span[@class='catalog-navigation-list__dropdown-title' and contains(text(),'"+ itemName +"')]"));
     }
 }

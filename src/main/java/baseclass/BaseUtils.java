@@ -1,8 +1,7 @@
 package baseclass;
 
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -113,5 +112,40 @@ public class BaseUtils {
             e.printStackTrace();
             throw new RuntimeException();
         }
+    }
+
+    public static String getScreenshot(WebDriver driver) {
+
+        //LoggerUtil.logMessage("****** getScreenShot called with driver: " + driver + " ******");
+
+        String path = null;
+
+        try {
+
+
+
+            TakesScreenshot takesScreenshot = (TakesScreenshot) driver;
+
+            // take screenshot and store as a file format
+
+            File src = takesScreenshot.getScreenshotAs(OutputType.FILE);
+
+            // define the path to store the screenshot taken
+
+            //path = System.getProperty("user.dir") + "/test-output/Screenshot/" + System.currentTimeMillis() + ".png";
+
+            path = System.getProperty("user.dir") + "/target/screenshot/" + System.currentTimeMillis() + ".png";
+
+            File destination = new File(path);
+            // copy the screenshot to the above given path
+
+            FileUtils.copyFile(src, destination);
+
+        } catch (Exception e) {
+
+            e.printStackTrace();
+
+        }
+        return path;
     }
 }
