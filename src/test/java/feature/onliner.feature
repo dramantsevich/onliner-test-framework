@@ -59,5 +59,5 @@ Feature: Onliner feature
        When user is on home page
 
       Examples:
-           | product1                                        | product2                                              |
-           | HONOR 30 BMH-AN10 8GB/128GB (изумрудно-зеленый) | Xiaomi Redmi 9A 2GB/32GB международная версия (серый) |
+           | product1                                                  | product2                                              |
+           | HONOR 10X Lite DNN-LX9 4GB/128GB (ультрафиолетовый закат) | Xiaomi Redmi 9A 2GB/32GB международная версия (серый) |
